@@ -4,10 +4,10 @@
   "repo": "black-pc",
   "casing": "Nubi-Prey/black-pc",
   "categoryKey": "systems",
-  "badge": "DIRECT X86 EXECUTION",
-  "refLabel": "NATIVE LINUX PORT",
-  "title": "BLACK PC port",
-  "description": "Port nativo de BLACK (Criterion Games, 2006, Xbox) para Linux e Windows. Executa o código de máquina x86 de 32 bits original diretamente na CPU host em velocidade nativa sem emulação de máquina completa, com shims POSIX para o kernel do Xbox, renderização DXVK sobre Vulkan e áudio/entrada via SDL2.",
+  "badge": "LINUX PORT CONTRIBUTION",
+  "refLabel": "CONTRIBUIÇÃO OPEN SOURCE",
+  "title": "BLACK PC port (Port Linux)",
+  "description": "Contribuição de código aberto ao projeto black-pc (de Spark198rus): desenvolvimento do port nativo para Linux. Implementação de shims POSIX para o kernel do Xbox (xboxkrnl.exe), gerenciamento de threads e memória virtual no Linux, renderização gráfica via DXVK sobre Vulkan e áudio/entrada via SDL2, executando o jogo sem emulação de máquina e sem depender de Wine ou Proton.",
   "icon": "/images/projects/black-pc.png",
   "visitLink": "https://github.com/Nubi-Prey/black-pc",
   "tags": [
@@ -27,12 +27,12 @@
   },
   "locales": {
     "pt_BR": {
-      "title": "BLACK PC port",
-      "tagline": "Port Nativo de BLACK (Xbox) para Linux com Execução Direta x86",
+      "title": "BLACK PC port (Port Linux)",
+      "tagline": "Contribuição Open Source: Port Nativo de BLACK (Xbox) para Linux",
       "category": "Sistemas & Engenharia Reversa",
-      "badge": "DIRECT X86 EXECUTION",
-      "refLabel": "PORT LINUX NATIVO",
-      "description": "Port nativo de BLACK (Criterion Games, 2006, Xbox) para Linux e Windows. Executa o código de máquina x86 de 32 bits original diretamente na CPU host em velocidade nativa sem emulação de máquina completa, com shims POSIX para o kernel do Xbox, renderização DXVK sobre Vulkan e áudio/entrada via SDL2.",
+      "badge": "LINUX PORT CONTRIBUTION",
+      "refLabel": "CONTRIBUIÇÃO OPEN SOURCE",
+      "description": "Contribuição de código aberto ao projeto black-pc (de Spark198rus): desenvolvimento do port nativo para Linux. Implementação de shims POSIX para o kernel do Xbox (xboxkrnl.exe), gerenciamento de threads e memória virtual no Linux, renderização gráfica via DXVK sobre Vulkan e áudio/entrada via SDL2, executando o jogo sem emulação de máquina e sem depender de Wine ou Proton.",
       "tags": [
         "C++",
         "x86 Assembly",
@@ -44,18 +44,18 @@
         "CMake"
       ],
       "highlights": [
-        "Execução de código de máquina Pentium III de 32 bits diretamente na CPU host sem virtualização",
-        "Camada de compatibilidade POSIX própria implementando chamadas de kernel, memória virtual e sincronização",
+        "Desenvolvimento do port nativo para Linux no projeto black-pc de Spark198rus, sem depender de Wine ou Proton",
+        "Implementação de camada de compatibilidade POSIX própria para chamadas de kernel do Xbox, memória virtual e threads",
         "Pipeline de renderização Direct3D 9 com DXVK sobre Vulkan no Linux nativo a 60 FPS com resoluções modernas"
       ]
     },
     "en_US": {
-      "title": "BLACK PC port",
-      "tagline": "Native PC Port of BLACK (Xbox) for Linux with Direct x86 Execution",
+      "title": "BLACK PC port (Linux Port)",
+      "tagline": "Open-Source Contribution: Native Linux Port of BLACK (Xbox)",
       "category": "Systems & Reverse Engineering",
-      "badge": "DIRECT X86 EXECUTION",
-      "refLabel": "NATIVE LINUX PORT",
-      "description": "Native PC port of BLACK (Criterion Games, 2006, Xbox) for Linux and Windows. Executes the original 32-bit x86 machine code directly on the host CPU at full hardware speed without full-system emulation, featuring custom POSIX shims for the Xbox kernel, DXVK over Vulkan, and SDL2 audio/input.",
+      "badge": "LINUX PORT CONTRIBUTION",
+      "refLabel": "OPEN SOURCE CONTRIBUTION",
+      "description": "Open-source contribution to the black-pc project (by Spark198rus): native Linux port implementation. Authored custom POSIX shims replicating Xbox kernel (xboxkrnl.exe) primitives, Linux thread and virtual memory management, DXVK over Vulkan rendering, and SDL2 audio/input backends to run the game natively without Wine or Proton.",
       "tags": [
         "C++",
         "x86 Assembly",
@@ -67,8 +67,8 @@
         "CMake"
       ],
       "highlights": [
-        "Original 32-bit Pentium III x86 machine code runs directly on host CPU at native hardware speed",
-        "Custom POSIX compatibility layer implementing Xbox kernel primitives, virtual memory, and threads",
+        "Authored the native Linux port for Spark198rus's black-pc project, running natively without Wine or Proton",
+        "Custom POSIX compatibility layer implementing Xbox kernel primitives, virtual memory, and native Linux threads",
         "Direct3D 9 graphics pipeline running via DXVK over Vulkan on native Linux at 60 FPS with modern resolutions"
       ]
     }

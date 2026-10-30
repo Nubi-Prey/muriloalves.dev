@@ -17,10 +17,10 @@ export const enDictionary: Dictionary = {
     statusBadge: "ENGINEERING PORTFOLIO // MURILO ALVES",
     name: "MURILO ALVES",
     role: "Software & Systems Engineer",
-    bio: "Software engineer working on low-level systems, pure C computer graphics, and offline-first desktop tools built for continuous commercial operations without cloud dependencies.",
+    bio: "Software engineer working on low-level systems, resilient backends, databases, and offline-first desktop tools built for continuous commercial operations without cloud dependencies.",
     tags: [
       "Systems & Low-Level",
-      "Computer Graphics",
+      "Backend & Databases",
       "Desktop Local-First",
       "Precision Engineering",
     ],
@@ -36,7 +36,7 @@ export const enDictionary: Dictionary = {
   },
   competencies: {
     title: "Core Areas & Technical Competencies",
-    subtitle: "Engineering practices applied across systems software, graphics algorithms, and desktop tools.",
+    subtitle: "Engineering practices applied across systems software, backend architecture, databases, and desktop tools.",
     status: "STATUS: AVAILABLE FOR PROPOSALS",
     refLabel: "REFERENCE PROJECT:",
     cards: [
@@ -63,24 +63,24 @@ export const enDictionary: Dictionary = {
       },
       {
         icon: "dns",
-        title: "Backends & Event-Driven",
+        title: "Backends & Databases",
         description:
-          "Event-driven services in Java 17 using JDA 5 and PostgreSQL connection pools, containerized and automated with Docker Compose.",
+          "Event-driven services and APIs in Java and TypeScript, relational data modeling with PostgreSQL and SQLite, high-throughput connection pools, and containerized Docker environments.",
         projectRef: "Astolfo-bot",
       },
     ],
   },
   contact: {
     tagline: "CONTACT & TRANSMISSIONS",
-    title: "Let's talk about systems, low-level engineering, or software architecture",
-    description: "Available for roles and projects in systems engineering, local-first desktop software, and low-latency architecture.",
+    title: "Let's talk about systems, backend architecture, databases, or low-level engineering",
+    description: "Available for roles and projects in systems engineering, backend services, databases, and reliable desktop software.",
     emailBtn: "muriloalvesnp@gmail.com",
     githubBtn: "GitHub",
     linkedinBtn: "LinkedIn",
   },
   footer: {
     nameRole: "MURILO ALVES // SOFTWARE ENGINEERING",
-    summary: "Systems engineering, computer graphics, firmware, and local-first desktop software architecture.",
+    summary: "Systems engineering, backend systems, databases, firmware, and local-first desktop software architecture.",
     connectionsTitle: "CONNECTIONS",
     connections: [
       { label: "GITHUB", value: "Nubi-Prey", url: "https://github.com/Nubi-Prey" },

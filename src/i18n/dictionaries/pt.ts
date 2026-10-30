@@ -17,10 +17,10 @@ export const ptDictionary: Dictionary = {
     statusBadge: "PORTFÓLIO DE ENGENHARIA // MURILO ALVES",
     name: "MURILO ALVES",
     role: "Engenheiro de Software & Sistemas",
-    bio: "Engenheiro de software focado em sistemas de baixo nível, computação gráfica em C puro e ferramentas desktop construídas para operar continuamente em comércio e oficinas, sem depender de conexão com a nuvem.",
+    bio: "Engenheiro de software focado em sistemas de baixo nível, arquitetura de backend, bancos de dados e ferramentas desktop construídas para operar continuamente em comércio e oficinas, sem depender de conexão com a nuvem.",
     tags: [
       "Sistemas & Baixo Nível",
-      "Computação Gráfica",
+      "Backend & Bancos de Dados",
       "Desktop Local-First",
       "Engenharia de Precisão",
     ],
@@ -36,7 +36,7 @@ export const ptDictionary: Dictionary = {
   },
   competencies: {
     title: "Áreas de Atuação & Competências Técnicas",
-    subtitle: "Práticas de engenharia aplicadas em projetos de sistemas, computação gráfica e aplicações desktop.",
+    subtitle: "Práticas de engenharia aplicadas em projetos de sistemas, arquitetura backend, bancos de dados e aplicações desktop.",
     status: "STATUS: DISPONÍVEL PARA PROPOSTAS",
     refLabel: "PROJETO DE REFERÊNCIA:",
     cards: [
@@ -63,24 +63,24 @@ export const ptDictionary: Dictionary = {
       },
       {
         icon: "dns",
-        title: "Backends & Eventos",
+        title: "Backends & Bancos de Dados",
         description:
-          "Serviços orientados a eventos em Java 17 com a biblioteca JDA 5 e pools de conexão para PostgreSQL, com ambiente conteinerizado via Docker Compose.",
+          "Serviços orientados a eventos e APIs em Java e TypeScript, modelagem relacional com PostgreSQL e SQLite, pools de conexão de alta performance e ambientes conteinerizados com Docker.",
         projectRef: "Astolfo-bot",
       },
     ],
   },
   contact: {
     tagline: "CONTATO & OPORTUNIDADES",
-    title: "Vamos conversar sobre sistemas, baixo nível ou arquitetura de software",
-    description: "Disponível para contratação e projetos em engenharia de sistemas, ferramentas desktop locais e software de baixa latência.",
+    title: "Vamos conversar sobre sistemas, backend, bancos de dados ou arquitetura de software",
+    description: "Disponível para contratação e projetos em engenharia de sistemas, desenvolvimento backend, bancos de dados e software desktop de alta confiabilidade.",
     emailBtn: "muriloalvesnp@gmail.com",
     githubBtn: "GitHub",
     linkedinBtn: "LinkedIn",
   },
   footer: {
     nameRole: "MURILO ALVES // ENGENHARIA DE SOFTWARE",
-    summary: "Engenharia de sistemas, computação gráfica, firmwares e arquitetura de software desktop local-first.",
+    summary: "Engenharia de sistemas, backend resiliente, bancos de dados e arquitetura de software desktop local-first.",
     connectionsTitle: "CONEXÕES",
     connections: [
       { label: "GITHUB", value: "Nubi-Prey", url: "https://github.com/Nubi-Prey" },

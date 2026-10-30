@@ -129,7 +129,7 @@ describe("GitHub GraphQL API & ISR Integration", () => {
       expect(projects).toHaveLength(2);
       expect(projects[0].id).toBe("mineos");
       expect(projects[1].id).toBe("black-pc");
-      expect(projects[1].title).toBe("BLACK PC port");
+      expect(projects[1].title).toBe("BLACK PC port (Port Linux)");
       expect(projects[1].casing).toBe("Nubi-Prey/black-pc");
     });
 
