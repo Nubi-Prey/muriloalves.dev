@@ -23,7 +23,7 @@ export function Competencies() {
   };
 
   return (
-    <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8" id="competencias">
+    <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 scroll-mt-16" id="competencias">
       <div className="border-2 border-[#1c1b1d] dark:border-[#3d4147] bg-[#ffffff] dark:bg-[#191b1e] shadow-mechanical p-4 sm:p-6 md:p-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-center justify-between border-b-2 border-[#1c1b1d] dark:border-[#2e3136] pb-5 gap-3 sm:gap-4">

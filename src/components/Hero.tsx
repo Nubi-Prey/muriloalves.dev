@@ -8,7 +8,10 @@ export function Hero() {
   const { t } = useLanguage();
 
   return (
-    <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-20 pb-8 sm:pt-28 sm:pb-12">
+    <section
+      id="inicio"
+      className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-20 pb-8 sm:pt-28 sm:pb-12 scroll-mt-20"
+    >
       <div className="max-w-4xl space-y-5">
         {/* Status Label */}
         <div className="inline-flex items-center gap-2 px-2.5 py-1 bg-[#eae7ea] dark:bg-[#1e2024] border border-[#1c1b1d] dark:border-[#3d4147] font-mono text-[10px] sm:text-xs tracking-wider text-[#1c1b1d] dark:text-[#dcc9a9] uppercase font-bold shadow-mechanical-sm max-w-full">

@@ -8,7 +8,7 @@ export function ContactSection() {
   const { t } = useLanguage();
 
   return (
-    <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8" id="contato">
+    <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 scroll-mt-16" id="contato">
       <div className="border-2 border-[#1c1b1d] dark:border-[#3d4147] bg-[#ffffff] dark:bg-[#191b1e] shadow-mechanical p-4 sm:p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div className="space-y-1.5 max-w-xl">
           <div className="font-mono text-xs text-[#b83a20] dark:text-[#ffb4a4] font-bold uppercase tracking-wider">

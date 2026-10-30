@@ -114,4 +114,51 @@ describe("Responsividade, Navegação Mobile e Grid Adaptativo", () => {
     expect(btnEmail.className).toContain("w-full");
     expect(btnEmail.className).toContain("sm:w-auto");
   });
+
+  it("deve atualizar dinamicamente o highlight do nav desktop ao clicar em uma seção", async () => {
+    const user = userEvent.setup();
+    render(
+      <Providers>
+        <Header />
+      </Providers>
+    );
+
+    const desktopNav = document.querySelector("nav.hidden.md\\:flex");
+    expect(desktopNav).not.toBeNull();
+
+    const homeLink = within(desktopNav as HTMLElement).getByText(ptDictionary.header.home);
+    const projectsLink = within(desktopNav as HTMLElement).getByText(ptDictionary.header.projects);
+    const competenciesLink = within(desktopNav as HTMLElement).getByText(ptDictionary.header.competencies);
+
+    // Inicialmente, "Início" possui o destaque mecânico ativo
+    expect(homeLink.className).toContain("shadow-[2px_2px_0px_0px_#b83a20]");
+    expect(projectsLink.className).not.toContain("shadow-[2px_2px_0px_0px_#b83a20]");
+
+    // Clica em "Projetos"
+    await user.click(projectsLink);
+    expect(projectsLink.className).toContain("shadow-[2px_2px_0px_0px_#b83a20]");
+    expect(homeLink.className).not.toContain("shadow-[2px_2px_0px_0px_#b83a20]");
+
+    // Clica em "Competências"
+    await user.click(competenciesLink);
+    expect(competenciesLink.className).toContain("shadow-[2px_2px_0px_0px_#b83a20]");
+    expect(projectsLink.className).not.toContain("shadow-[2px_2px_0px_0px_#b83a20]");
+  });
+
+  it("deve garantir que todos os botões do Header possuam type='button', touch-manipulation e área de toque móvel", () => {
+    render(
+      <Providers>
+        <Header />
+      </Providers>
+    );
+
+    const buttons = screen.getAllByRole("button");
+    expect(buttons.length).toBeGreaterThanOrEqual(3);
+
+    for (const button of buttons) {
+      expect(button).toHaveAttribute("type", "button");
+      expect(button.className).toContain("touch-manipulation");
+      expect(button.className).toContain("select-none");
+    }
+  });
 });
