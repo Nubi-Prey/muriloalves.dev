@@ -1,5 +1,9 @@
 import { PortfolioProjectSchemaV2 } from "@/types/project-schema";
-import { getAllProjectSchemas, validateProjectSchemaV2 } from "./projects";
+import {
+  getAllProjectSchemas,
+  getLocalSchemaByRepo,
+  validateProjectSchemaV2,
+} from "./projects";
 
 export const GITHUB_GRAPHQL_ENDPOINT = "https://api.github.com/graphql";
 export const DEFAULT_GITHUB_USERNAME = "Nubi-Prey";
@@ -112,18 +116,30 @@ export async function fetchProjectsWithFallback(): Promise<readonly PortfolioPro
     const validSchemas: PortfolioProjectSchemaV2[] = [];
 
     for (const node of nodes) {
-      if (!node || !node.portfolioJson?.text) {
+      if (!node) {
         continue;
       }
-      try {
-        const rawJson = JSON.parse(node.portfolioJson.text);
-        const validated = validateProjectSchemaV2(rawJson);
-        validSchemas.push(validated);
-      } catch (parseOrValidationError) {
-        console.warn(
-          `[github] Failed to parse/validate schema for ${node.name}:`,
-          parseOrValidationError
-        );
+
+      // Se o nó do GitHub possui .github/portfolio.json remoto, valida e consome
+      if (node.portfolioJson?.text) {
+        try {
+          const rawJson = JSON.parse(node.portfolioJson.text);
+          const validated = validateProjectSchemaV2(rawJson);
+          validSchemas.push(validated);
+          continue;
+        } catch (parseOrValidationError) {
+          console.warn(
+            `[github] Failed to parse/validate remote schema for ${node.name}:`,
+            parseOrValidationError
+          );
+        }
+      }
+
+      // Alternativa A: Se o repositório remoto não possui portfolio.json (ex: black-pc / fork externo),
+      // busca resolução local no catálogo de muriloalves.dev
+      const localSchema = getLocalSchemaByRepo(node.name);
+      if (localSchema) {
+        validSchemas.push(localSchema);
       }
     }
 

@@ -86,6 +86,53 @@ describe("GitHub GraphQL API & ISR Integration", () => {
       expect(projects[0].id).toBe("mineos");
     });
 
+    it("deve resolver de forma híbrida projetos externos/forks sem portfolio.json remoto utilizando o catálogo local", async () => {
+      process.env.GITHUB_TOKEN = "ghp_mock_token_12345";
+      const localSchemas = getAllProjectSchemas();
+      const mineosSchema = localSchemas.find((s) => s.id === "mineos")!;
+
+      const mockGraphQLResponse = {
+        data: {
+          user: {
+            pinnedItems: {
+              nodes: [
+                {
+                  name: "MineOS",
+                  nameWithOwner: "Nubi-Prey/MineOS",
+                  isPrivate: false,
+                  url: "https://github.com/Nubi-Prey/MineOS",
+                  portfolioJson: {
+                    text: JSON.stringify(mineosSchema),
+                  },
+                },
+                {
+                  name: "black-pc",
+                  nameWithOwner: "Nubi-Prey/black-pc",
+                  isPrivate: false,
+                  url: "https://github.com/Nubi-Prey/black-pc",
+                  portfolioJson: null, // Sem portfolio.json remoto para não poluir o fork
+                },
+              ],
+            },
+          },
+        },
+      };
+
+      const fetchMock = vi.fn().mockResolvedValue({
+        ok: true,
+        status: 200,
+        json: async () => mockGraphQLResponse,
+      });
+      vi.stubGlobal("fetch", fetchMock);
+
+      const projects = await fetchProjectsWithFallback();
+      expect(projects).toHaveLength(2);
+      expect(projects[0].id).toBe("mineos");
+      expect(projects[1].id).toBe("black-pc");
+      expect(projects[1].title).toBe("BLACK PC port");
+      expect(projects[1].casing).toBe("Nubi-Prey/black-pc");
+    });
+
     it("deve fazer fallback resiliente para o catálogo local se o GitHub responder com status de erro (ex: 500)", async () => {
       process.env.GITHUB_TOKEN = "ghp_mock_token_12345";
 

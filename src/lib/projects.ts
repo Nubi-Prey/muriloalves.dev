@@ -10,7 +10,7 @@ import engraverRaw from "../../docs/portfolio_json_configs/Engraver.portfolio.js
 import lupaRaw from "../../docs/portfolio_json_configs/lupa.portfolio.json";
 import estoquelentesRaw from "../../docs/portfolio_json_configs/estoquelentes.portfolio.json";
 import astolfoBotRaw from "../../docs/portfolio_json_configs/Astolfo-bot.portfolio.json";
-import nubiLiveRaw from "../../docs/portfolio_json_configs/Nubi.live.portfolio.json";
+import blackPcRaw from "../../docs/portfolio_json_configs/black-pc.portfolio.json";
 
 const VALID_CATEGORY_KEYS: ReadonlySet<ProjectCategoryKey> = new Set([
   "systems",
@@ -222,7 +222,7 @@ const RAW_CATALOG: readonly unknown[] = [
   lupaRaw,
   estoquelentesRaw,
   astolfoBotRaw,
-  nubiLiveRaw,
+  blackPcRaw,
 ];
 
 const VALIDATED_CATALOG: readonly PortfolioProjectSchemaV2[] = RAW_CATALOG.map(
@@ -231,6 +231,17 @@ const VALIDATED_CATALOG: readonly PortfolioProjectSchemaV2[] = RAW_CATALOG.map(
 
 export function getAllProjectSchemas(): readonly PortfolioProjectSchemaV2[] {
   return VALIDATED_CATALOG;
+}
+
+export function getLocalSchemaByRepo(
+  repoName: string
+): PortfolioProjectSchemaV2 | undefined {
+  const normalized = repoName.toLowerCase();
+  return VALIDATED_CATALOG.find(
+    (item) =>
+      item.repo.toLowerCase() === normalized ||
+      item.id.toLowerCase() === normalized
+  );
 }
 
 export function toLocalizedProjectData(

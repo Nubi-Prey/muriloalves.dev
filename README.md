@@ -66,7 +66,7 @@ flowchart TD
 | [**Lupa**](https://github.com/Nubi-Prey/lupa) | `Nubi-Prey/lupa` | Aplicação Desktop | `LOCAL-FIRST ERP` | Catálogo desktop em Electron 39, React 19, Tailwind v4, Zustand 5, Fuse.js 7 e MongoDB Atlas |
 | [**EstoqueLentes**](https://github.com/Nubi-Prey/estoquelentes) | `Nubi-Prey/estoquelentes` | Aplicação Desktop | `DESKTOP EMBEDDED` | Gestão óptica com SQLite embutido via `better-sqlite3`, Drizzle ORM e Electron IPC seguro |
 | [**Astolfo-bot**](https://github.com/Nubi-Prey/Astolfo-bot) | `Nubi-Prey/Astolfo-bot` | Backend & DevOps | `ASYNC CONCURRENCY` | Bot orientado a eventos em Java 17 com JDA 5, PostgreSQL 16 provisionado via Docker Compose |
-| [**Nubi.live (2024)**](https://github.com/Nubi-Prey/Nubi.live) | `Nubi-Prey/Nubi.live` | Jamstack Legado | `HISTORICAL MILESTONE` | Primeiro site pessoal (2024) com Next.js e GitHub GraphQL. Preservado como marco histórico |
+| [**BLACK PC port**](https://github.com/Nubi-Prey/black-pc) | `Nubi-Prey/black-pc` | Sistemas & Engenharia Reversa | `DIRECT X86 EXECUTION` | Port nativo x86 para Linux e Windows, shims POSIX para Xbox kernel, renderização DXVK sobre Vulkan e áudio/entrada SDL2 |
 
 ---
 

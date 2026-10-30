@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "2.0",
+  "id": "black-pc",
+  "repo": "black-pc",
+  "casing": "Nubi-Prey/black-pc",
+  "categoryKey": "systems",
+  "badge": "DIRECT X86 EXECUTION",
+  "refLabel": "NATIVE LINUX PORT",
+  "title": "BLACK PC port",
+  "description": "Port nativo de BLACK (Criterion Games, 2006, Xbox) para Linux e Windows. Executa o código de máquina x86 de 32 bits original diretamente na CPU host em velocidade nativa sem emulação de máquina completa, com shims POSIX para o kernel do Xbox, renderização DXVK sobre Vulkan e áudio/entrada via SDL2.",
+  "icon": "/images/projects/black-pc.png",
+  "visitLink": "https://github.com/Nubi-Prey/black-pc",
+  "tags": [
+    "C++",
+    "x86 Assembly",
+    "Linux (POSIX)",
+    "SDL2",
+    "DXVK / Vulkan",
+    "Direct3D 9",
+    "Reverse Engineering",
+    "CMake"
+  ],
+  "links": {
+    "github": "https://github.com/Nubi-Prey/black-pc",
+    "releases": null,
+    "visit": null
+  },
+  "locales": {
+    "pt_BR": {
+      "title": "BLACK PC port",
+      "tagline": "Port Nativo de BLACK (Xbox) para Linux com Execução Direta x86",
+      "category": "Sistemas & Engenharia Reversa",
+      "badge": "DIRECT X86 EXECUTION",
+      "refLabel": "PORT LINUX NATIVO",
+      "description": "Port nativo de BLACK (Criterion Games, 2006, Xbox) para Linux e Windows. Executa o código de máquina x86 de 32 bits original diretamente na CPU host em velocidade nativa sem emulação de máquina completa, com shims POSIX para o kernel do Xbox, renderização DXVK sobre Vulkan e áudio/entrada via SDL2.",
+      "tags": [
+        "C++",
+        "x86 Assembly",
+        "Linux (POSIX)",
+        "SDL2",
+        "DXVK / Vulkan",
+        "Direct3D 9",
+        "Reverse Engineering",
+        "CMake"
+      ],
+      "highlights": [
+        "Execução de código de máquina Pentium III de 32 bits diretamente na CPU host sem virtualização",
+        "Camada de compatibilidade POSIX própria implementando chamadas de kernel, memória virtual e sincronização",
+        "Pipeline de renderização Direct3D 9 com DXVK sobre Vulkan no Linux nativo a 60 FPS com resoluções modernas"
+      ]
+    },
+    "en_US": {
+      "title": "BLACK PC port",
+      "tagline": "Native PC Port of BLACK (Xbox) for Linux with Direct x86 Execution",
+      "category": "Systems & Reverse Engineering",
+      "badge": "DIRECT X86 EXECUTION",
+      "refLabel": "NATIVE LINUX PORT",
+      "description": "Native PC port of BLACK (Criterion Games, 2006, Xbox) for Linux and Windows. Executes the original 32-bit x86 machine code directly on the host CPU at full hardware speed without full-system emulation, featuring custom POSIX shims for the Xbox kernel, DXVK over Vulkan, and SDL2 audio/input.",
+      "tags": [
+        "C++",
+        "x86 Assembly",
+        "Linux (POSIX)",
+        "SDL2",
+        "DXVK / Vulkan",
+        "Direct3D 9",
+        "Reverse Engineering",
+        "CMake"
+      ],
+      "highlights": [
+        "Original 32-bit Pentium III x86 machine code runs directly on host CPU at native hardware speed",
+        "Custom POSIX compatibility layer implementing Xbox kernel primitives, virtual memory, and threads",
+        "Direct3D 9 graphics pipeline running via DXVK over Vulkan on native Linux at 60 FPS with modern resolutions"
+      ]
+    }
+  }
+}

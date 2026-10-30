@@ -139,7 +139,7 @@ describe("Integridade de Dados, Schema v2, Anti-Alucinação e Paridade i18n", (
       { id: "lupa", repo: "lupa", casing: "Nubi-Prey/lupa" },
       { id: "estoquelentes", repo: "estoquelentes", casing: "Nubi-Prey/estoquelentes" },
       { id: "astolfo-bot", repo: "Astolfo-bot", casing: "Nubi-Prey/Astolfo-bot" },
-      { id: "nubi-live", repo: "Nubi.live", casing: "Nubi-Prey/Nubi.live" },
+      { id: "black-pc", repo: "black-pc", casing: "Nubi-Prey/black-pc" },
     ];
 
     expect(ptDictionary.projects.projectsList).toHaveLength(6);

@@ -9,7 +9,10 @@ Os arquivos `.portfolio.json` neste diretório seguem o **Schema v2 (`schemaVers
 3. `lupa.portfolio.json` → `Nubi-Prey/lupa` (`categoryKey: "desktop"`)
 4. `estoquelentes.portfolio.json` → `Nubi-Prey/estoquelentes` (`categoryKey: "desktop"`)
 5. `Astolfo-bot.portfolio.json` → `Nubi-Prey/Astolfo-bot` (`categoryKey: "backend"`)
-6. `Nubi.live.portfolio.json` → `Nubi-Prey/Nubi.live` (`categoryKey: "jamstack"`)
+6. `black-pc.portfolio.json` → `Nubi-Prey/black-pc` (`categoryKey: "systems"`)
+
+> [!NOTE]
+> Para projetos externos, forks ou contribuições upstream (como `black-pc`), o arquivo de metadados reside exclusivamente neste catálogo em `muriloalves.dev`, preservando o repositório remoto limpo e sem poluição para Pull Requests. O loader GraphQL (`src/lib/github.ts`) resolve esses repositórios automaticamente via resolução híbrida.
 
 ## Consumo e Validação no Código
 
