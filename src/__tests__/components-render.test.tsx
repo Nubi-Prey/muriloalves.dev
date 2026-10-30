@@ -24,6 +24,14 @@ describe("Integração Completa da Homepage (Componentes, Links, Classes Hover e
       screen.getByText(ptDictionary.hero.role)
     ).toBeInTheDocument();
 
+    // Badge do Hero com especialidade técnica
+    expect(screen.getByText(ptDictionary.hero.statusBadge)).toBeInTheDocument();
+
+    // Brand link do Header com o domínio
+    expect(
+      screen.getByRole("link", { name: /muriloalves\.dev/i })
+    ).toBeInTheDocument();
+
     // Foto removida por ser desnecessária
     expect(screen.queryByAltText(/Foto de perfil de Murilo Alves/i)).not.toBeInTheDocument();
 

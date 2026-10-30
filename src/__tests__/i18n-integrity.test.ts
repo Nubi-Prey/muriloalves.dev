@@ -231,4 +231,22 @@ describe("Integridade de Dados, Schema v2, Anti-Alucinação e Paridade i18n", (
     const avatarPath = path.join(ROOT_DIR, "public/images/avatar.jpg");
     expect(fs.existsSync(avatarPath)).toBe(false);
   });
+
+  it("não deve repetir o nome do autor desnecessariamente no Header, Hero Badge, Footer nameRole ou Footer rights", () => {
+    expect(ptDictionary.header.title).not.toContain("MURILO ALVES");
+    expect(enDictionary.header.title).not.toContain("MURILO ALVES");
+
+    expect(ptDictionary.hero.statusBadge).not.toContain("MURILO ALVES");
+    expect(enDictionary.hero.statusBadge).not.toContain("MURILO ALVES");
+
+    expect(ptDictionary.footer.nameRole).not.toContain("MURILO ALVES");
+    expect(enDictionary.footer.nameRole).not.toContain("MURILO ALVES");
+
+    expect(ptDictionary.footer.rights).not.toContain("MURILO ALVES");
+    expect(enDictionary.footer.rights).not.toContain("MURILO ALVES");
+
+    // Mantém o nome no Hero H1 como identificador canônico da página
+    expect(ptDictionary.hero.name).toBe("MURILO ALVES");
+    expect(enDictionary.hero.name).toBe("MURILO ALVES");
+  });
 });

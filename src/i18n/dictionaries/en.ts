@@ -3,8 +3,8 @@ import { getLocalizedProjects } from "@/lib/projects";
 
 export const enDictionary: Dictionary = {
   header: {
-    title: "MURILO ALVES",
-    domain: "[muriloalves.dev]",
+    title: "muriloalves.dev",
+    domain: "",
     home: "Home",
     projects: "Projects",
     competencies: "Competencies",
@@ -14,7 +14,7 @@ export const enDictionary: Dictionary = {
     themeDark: "DARK",
   },
   hero: {
-    statusBadge: "ENGINEERING PORTFOLIO // MURILO ALVES",
+    statusBadge: "ENGINEERING PORTFOLIO // SYSTEMS & BACKEND",
     name: "MURILO ALVES",
     role: "Software & Systems Engineer",
     bio: "Software engineer working on low-level systems, resilient backends, databases, and offline-first desktop tools built for continuous commercial operations without cloud dependencies.",
@@ -79,7 +79,7 @@ export const enDictionary: Dictionary = {
     linkedinBtn: "LinkedIn",
   },
   footer: {
-    nameRole: "MURILO ALVES // SOFTWARE ENGINEERING",
+    nameRole: "SYSTEMS & BACKEND ARCHITECTURE",
     summary: "Systems engineering, backend systems, databases, firmware, and local-first desktop software architecture.",
     connectionsTitle: "CONNECTIONS",
     connections: [
@@ -87,6 +87,6 @@ export const enDictionary: Dictionary = {
       { label: "LINKEDIN", value: "Murilo Alves", url: "https://www.linkedin.com/in/murilo-alves-np/" },
       { label: "EMAIL", value: "muriloalvesnp@gmail.com", url: "mailto:muriloalvesnp@gmail.com" },
     ],
-    rights: "© 2026 MURILO ALVES. ALL RIGHTS RESERVED.",
+    rights: "© 2026. ALL RIGHTS RESERVED.",
   },
 };

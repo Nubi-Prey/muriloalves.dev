@@ -28,13 +28,15 @@ export function Header() {
       <div className="h-16 max-w-7xl mx-auto px-4 lg:px-8 flex items-center justify-between gap-2 sm:gap-4">
         {/* Brand */}
         <div className="flex items-center gap-2 sm:gap-3 min-w-0">
-          <a href="#" className="flex items-center gap-2 group min-w-0">
+          <a href="#" className="flex items-center gap-2 group min-w-0 font-mono">
             <span className="w-3 h-3 bg-[#b83a20] inline-block shrink-0"></span>
-            <span className="font-bold text-xs sm:text-base uppercase tracking-tight text-[#1c1b1d] dark:text-[#ede5d8] group-hover:text-[#b83a20] dark:group-hover:text-[#dcc9a9] transition-colors truncate">
-              {t.header.title}{" "}
-              <span className="text-xs text-[#584237] dark:text-[#dcc9a9]/70 font-normal font-mono hidden sm:inline">
-                {t.header.domain}
-              </span>
+            <span className="font-bold text-xs sm:text-base tracking-tight text-[#1c1b1d] dark:text-[#ede5d8] group-hover:text-[#b83a20] dark:group-hover:text-[#dcc9a9] transition-colors truncate">
+              {t.header.title}
+              {t.header.domain ? (
+                <span className="text-xs text-[#584237] dark:text-[#dcc9a9]/70 font-normal font-mono hidden sm:inline ml-1">
+                  {t.header.domain}
+                </span>
+              ) : null}
             </span>
           </a>
         </div>

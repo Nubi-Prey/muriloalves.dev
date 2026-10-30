@@ -3,8 +3,8 @@ import { getLocalizedProjects } from "@/lib/projects";
 
 export const ptDictionary: Dictionary = {
   header: {
-    title: "MURILO ALVES",
-    domain: "[muriloalves.dev]",
+    title: "muriloalves.dev",
+    domain: "",
     home: "Início",
     projects: "Projetos",
     competencies: "Competências",
@@ -14,7 +14,7 @@ export const ptDictionary: Dictionary = {
     themeDark: "ESCURO",
   },
   hero: {
-    statusBadge: "PORTFÓLIO DE ENGENHARIA // MURILO ALVES",
+    statusBadge: "PORTFÓLIO DE ENGENHARIA // SISTEMAS & BACKEND",
     name: "MURILO ALVES",
     role: "Engenheiro de Software & Sistemas",
     bio: "Engenheiro de software focado em sistemas de baixo nível, arquitetura de backend, bancos de dados e ferramentas desktop construídas para operar continuamente em comércio e oficinas, sem depender de conexão com a nuvem.",
@@ -79,7 +79,7 @@ export const ptDictionary: Dictionary = {
     linkedinBtn: "LinkedIn",
   },
   footer: {
-    nameRole: "MURILO ALVES // ENGENHARIA DE SOFTWARE",
+    nameRole: "ARQUITETURA DE SISTEMAS & BACKEND",
     summary: "Engenharia de sistemas, backend resiliente, bancos de dados e arquitetura de software desktop local-first.",
     connectionsTitle: "CONEXÕES",
     connections: [
@@ -87,6 +87,6 @@ export const ptDictionary: Dictionary = {
       { label: "LINKEDIN", value: "Murilo Alves", url: "https://www.linkedin.com/in/murilo-alves-np/" },
       { label: "EMAIL", value: "muriloalvesnp@gmail.com", url: "mailto:muriloalvesnp@gmail.com" },
     ],
-    rights: "© 2026 MURILO ALVES. TODOS OS DIREITOS RESERVADOS.",
+    rights: "© 2026. TODOS OS DIREITOS RESERVADOS.",
   },
 };
