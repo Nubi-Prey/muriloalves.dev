@@ -1,0 +1,3 @@
+# Configuração de escopo do ai-memory para o repositório muriloalves.dev
+workspace = "default"
+project = "portfolio"
