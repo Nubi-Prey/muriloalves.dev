@@ -22,16 +22,43 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://muriloalves.dev"),
-  title: "Murilo Alves // Software & Systems Engineer",
+  title: {
+    default:
+      "Murilo Alves // Engenheiro de Software & Sistemas | Software & Systems Engineer",
+    template: "%s | Murilo Alves",
+  },
   description:
-    "Engineering portfolio: baremetal operating systems, resilient backend architecture, databases, and local-first commercial desktop tools.",
+    "Portfólio de Engenharia de Software de Murilo Alves: sistemas baremetal, arquitetura de backend resiliente, bancos de dados e aplicações desktop local-first. // Engineering portfolio: baremetal operating systems, resilient backend architecture, databases, and local-first commercial desktop tools.",
+  keywords: [
+    "Murilo Alves",
+    "Nubi-Prey",
+    "Engenheiro de Software",
+    "Engenheiro de Sistemas",
+    "Software Engineer",
+    "Systems Engineer",
+    "Backend Architecture",
+    "Databases",
+    "PostgreSQL",
+    "SQLite",
+    "Local-First Desktop",
+    "Baremetal Linux",
+    "Rust",
+    "C",
+    "C++",
+    "Python",
+    "TypeScript",
+    "Java",
+  ],
+  authors: [{ name: "Murilo Alves", url: "https://muriloalves.dev" }],
+  creator: "Murilo Alves",
+  publisher: "Murilo Alves",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Murilo Alves // Software & Systems Engineer",
+    title: "Murilo Alves // Engenheiro de Software & Sistemas",
     description:
-      "Engineering portfolio: baremetal operating systems, resilient backend architecture, databases, and local-first commercial desktop tools.",
+      "Portfólio de Engenharia de Software de Murilo Alves: sistemas baremetal, arquitetura de backend resiliente, bancos de dados e aplicações desktop local-first.",
     url: "https://muriloalves.dev",
     siteName: "muriloalves.dev",
     locale: "pt_BR",

@@ -45,6 +45,8 @@ export async function POST(request: NextRequest) {
   try {
     revalidateTag(GITHUB_CACHE_TAG, "max");
     revalidatePath("/");
+    revalidatePath("/llms.txt");
+    revalidatePath("/llms-full.txt");
 
     return NextResponse.json({
       success: true,

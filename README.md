@@ -6,10 +6,10 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38bdf8?logo=tailwindcss)](https://tailwindcss.com/)
 [![pnpm](https://img.shields.io/badge/pnpm-12.15-orange?logo=pnpm)](https://pnpm.io/)
-[![Vitest](https://img.shields.io/badge/Vitest-41_tests_passing-success?logo=vitest)](https://vitest.dev/)
+[![Vitest](https://img.shields.io/badge/Vitest-49_tests_passing-success?logo=vitest)](https://vitest.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Portfólio de engenharia de software e sistemas de **Murilo Alves**, construído com estética **Cyber-Industrial Terminal Documental**, arquitetura orientada a dados auditados do GitHub via **GraphQL com Cache Components (Next.js 16)**, internacionalização nativa instantânea (**pt_BR** / **en_US**), suporte a tema duplo rígido (**Dark / Light**) e suíte completa de testes automatizados.
+Portfólio de engenharia de software e sistemas de **Murilo Alves** ([muriloalves.dev](https://muriloalves.dev)), construído com estética **Cyber-Industrial Terminal Documental**, arquitetura orientada a dados auditados do GitHub via **GraphQL com Cache Components (Next.js 16)**, superfície completa de **SEO, GEO & AI SEO** (`schema.org` JSON-LD, `/llms.txt`, `/llms-full.txt`, OpenGraph dinâmico), internacionalização nativa instantânea (**pt_BR** / **en_US**), suporte a tema duplo rígido (**Dark / Light**) e suíte completa de testes automatizados.
 
 ---
 
@@ -50,10 +50,23 @@ flowchart TD
 1. **Next.js 16 Cache Components:** Utiliza as diretivas nativas `"use cache"`, `cacheLife("days")` e `cacheTag("github-projects")`.
 2. **Schema v2 Bilíngue:** Cada repositório remoto mantém seu próprio arquivo `.github/portfolio.json` com especificações técnicas nos dois idiomas. Uma única requisição alimenta ambos os idiomas.
 3. **Fallback Offline / Zero-Downtime:** Se a API do GitHub estiver inacessível, com rate limit esgotado ou sem internet em ambiente de desenvolvimento local, o sistema consome automaticamente o catálogo pré-validado em [`docs/portfolio_json_configs/`](./docs/portfolio_json_configs/). A aplicação nunca quebra.
-4. **Revalidação Sob Demanda (*On-Demand ISR*):** Rota protegida em `/api/revalidate` que purga o cache imediatamente via `POST` ou `GET`:
+4. **Revalidação Sob Demanda (*On-Demand ISR*):** Rota protegida em `/api/revalidate` (com validação de segredo em tempo constante via `crypto.timingSafeEqual`) que purga o cache imediatamente via `POST` ou `GET`:
    ```bash
    curl -X POST "https://muriloalves.dev/api/revalidate?secret=SEU_REVALIDATE_SECRET"
    ```
+
+---
+
+## 🔍 SEO, GEO (Generative Engine Optimization) & AI SEO
+
+O portfólio implementa descoberta estruturada para buscadores tradicionais, motores de resposta generativa (Google AI Overviews, Perplexity, ChatGPT Search, Claude) e agentes de IA:
+
+- **Grafo JSON-LD (`schema.org` `@graph` em [`src/lib/structured-data.ts`](./src/lib/structured-data.ts)):** Desambiguação formal de `WebSite`, `ProfilePage`, `Person` (`Murilo Alves` / `Nubi-Prey`, `sameAs` GitHub e LinkedIn, `knowsAbout`) e `ItemList` de `SoftwareSourceCode` para os 6 projetos auditados, injetado no SSR/ISR inicial com sanitização XSS (`\u003c`).
+- **Endpoints `/llms.txt` e `/llms-full.txt` ([`src/lib/llms-content.ts`](./src/lib/llms-content.ts)):**
+  - [`https://muriloalves.dev/llms.txt`](https://muriloalves.dev/llms.txt): Índice estruturado de leitura rápida para LLMs e agentes.
+  - [`https://muriloalves.dev/llms-full.txt`](https://muriloalves.dev/llms-full.txt): Dossiê técnico completo e **bilíngue (`en-US` + `pt-BR`)**, expondo 100% dos campos `tagline` e os 3 `highlights` arquiteturais por projeto do Schema v2.
+- **OpenGraph & Twitter Image Dinâmica ([`src/app/opengraph-image.tsx`](./src/app/opengraph-image.tsx)):** Card `1200x630` PNG gerado estaticamente no build via `next/og` (`ImageResponse`) com a estética *Cyber-Industrial Brutalist*.
+- **Diretivas para AI Crawlers ([`src/app/robots.ts`](./src/app/robots.ts) & [`src/app/sitemap.ts`](./src/app/sitemap.ts)):** Permissão explícita para `GPTBot`, `OAI-SearchBot`, `ChatGPT-User`, `ClaudeBot`, `PerplexityBot` e `Google-Extended`, com indexação de `/`, `/llms.txt` e `/llms-full.txt` no `/sitemap.xml`.
 
 ---
 
@@ -118,7 +131,7 @@ Acesse `http://localhost:3000`.
 
 ## 🧪 Qualidade de Código & Testes
 
-O projeto conta com **41 testes automatizados** distribuídos em 6 suítes cobrindo integridade i18n, alternância de tema, responsividade mobile, semântica e SEO, renderização de componentes e resiliência de cache GraphQL:
+O projeto conta com **49 testes automatizados** distribuídos em 7 suítes cobrindo integridade i18n, alternância de tema, responsividade mobile, semântica, SEO/GEO/AI SEO (`JSON-LD`, `/llms.txt`, `/llms-full.txt`, `opengraph-image`, `robots.txt`, `sitemap.xml`), renderização de componentes e resiliência de cache GraphQL:
 
 ```bash
 # Executar todos os testes com Vitest

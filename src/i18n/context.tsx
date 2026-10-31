@@ -1,6 +1,12 @@
 "use client";
 
-import React, { createContext, useCallback, useContext, useSyncExternalStore } from "react";
+import React, {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useSyncExternalStore,
+} from "react";
 import { Dictionary, Locale } from "./types";
 import { ptDictionary } from "./dictionaries/pt";
 import { enDictionary } from "./dictionaries/en";
@@ -77,6 +83,13 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     getLocaleSnapshot,
     getServerLocaleSnapshot
   );
+
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      document.documentElement.lang =
+        activeLocale === "en_US" ? "en-US" : "pt-BR";
+    }
+  }, [activeLocale]);
 
   const setLocale = useCallback((newLocale: Locale) => {
     const validated: Locale = isValidLocale(newLocale) ? newLocale : DEFAULT_LOCALE;

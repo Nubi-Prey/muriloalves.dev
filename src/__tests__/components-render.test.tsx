@@ -172,6 +172,7 @@ describe("Integração Completa da Homepage (Componentes, Links, Classes Hover e
     );
 
     // Estado inicial em Português
+    expect(document.documentElement.lang).toBe("pt-BR");
     expect(screen.getByText(ptDictionary.hero.role)).toBeInTheDocument();
     expect(screen.getByText(ptDictionary.projects.sectionTitle)).toBeInTheDocument();
     expect(screen.getByText(ptDictionary.competencies.title)).toBeInTheDocument();
@@ -184,6 +185,7 @@ describe("Integração Completa da Homepage (Componentes, Links, Classes Hover e
     await user.click(langButton);
 
     expect(langButton).toHaveTextContent("EN");
+    expect(document.documentElement.lang).toBe("en-US");
     expect(screen.getByText(enDictionary.hero.role)).toBeInTheDocument();
     expect(screen.getByText(enDictionary.projects.sectionTitle)).toBeInTheDocument();
     expect(screen.getByText(enDictionary.competencies.title)).toBeInTheDocument();
@@ -194,6 +196,7 @@ describe("Integração Completa da Homepage (Componentes, Links, Classes Hover e
     await user.click(langButton);
 
     expect(langButton).toHaveTextContent("PT");
+    expect(document.documentElement.lang).toBe("pt-BR");
     expect(screen.getByText(ptDictionary.hero.role)).toBeInTheDocument();
     expect(screen.getByText(ptDictionary.projects.sectionTitle)).toBeInTheDocument();
     expect(screen.getByText(ptDictionary.footer.rights)).toBeInTheDocument();
@@ -201,18 +204,25 @@ describe("Integração Completa da Homepage (Componentes, Links, Classes Hover e
 
   it("deve exportar metadados de SEO completos, OpenGraph, robots.txt e sitemap.xml alinhados ao domínio muriloalves.dev", () => {
     expect(metadata.metadataBase?.toString()).toBe("https://muriloalves.dev/");
+    expect(metadata.description).toContain("arquitetura de backend resiliente");
     expect(metadata.description).toContain("backend architecture");
     expect(metadata.description).toContain("databases");
     expect(metadata.description).not.toContain("low-level computer graphics");
+    expect(metadata.creator).toBe("Murilo Alves");
     expect(metadata.openGraph).toBeDefined();
     expect(metadata.twitter).toBeDefined();
     expect(viewport.width).toBe("device-width");
 
     const robotsConfig = robots();
     expect(robotsConfig.sitemap).toBe("https://muriloalves.dev/sitemap.xml");
+    expect(robotsConfig.host).toBe("https://muriloalves.dev");
 
     const sitemapEntries = sitemap();
-    expect(sitemapEntries).toHaveLength(1);
-    expect(sitemapEntries[0].url).toBe("https://muriloalves.dev");
+    expect(sitemapEntries).toHaveLength(3);
+    expect(sitemapEntries.map((entry) => entry.url)).toEqual([
+      "https://muriloalves.dev",
+      "https://muriloalves.dev/llms.txt",
+      "https://muriloalves.dev/llms-full.txt",
+    ]);
   });
 });
