@@ -28,9 +28,9 @@ export function Competencies() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-center justify-between border-b-2 border-[#1c1b1d] dark:border-[#2e3136] pb-5 gap-3 sm:gap-4">
           <div>
-            <h3 className="text-xl sm:text-2xl font-bold uppercase text-[#1c1b1d] dark:text-[#ede5d8]">
+            <h2 className="text-xl sm:text-2xl font-bold uppercase text-[#1c1b1d] dark:text-[#ede5d8]">
               {t.competencies.title}
-            </h3>
+            </h2>
             <p className="font-mono text-xs sm:text-sm text-[#584237] dark:text-[#c5bba8] pt-1">
               {t.competencies.subtitle}
             </p>
@@ -51,9 +51,9 @@ export function Competencies() {
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
                   {getIcon(card.icon)}
-                  <h4 className="text-sm font-bold uppercase text-[#1c1b1d] dark:text-[#ede5d8]">
+                  <h3 className="text-sm font-bold uppercase text-[#1c1b1d] dark:text-[#ede5d8]">
                     {card.title}
-                  </h4>
+                  </h3>
                 </div>
                 <p className="font-mono text-xs text-[#584237] dark:text-[#c5bba8] leading-relaxed">
                   {card.description}

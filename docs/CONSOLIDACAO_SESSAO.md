@@ -35,9 +35,9 @@ flowchart TD
         EstoqueLentes["EstoqueLentes<br><i>Matriz Dióptrica 2D, better-sqlite3, Drizzle ORM</i>"]
     end
 
-    subgraph BackendJamstack["Backend & Jamstack"]
+    subgraph BackendJamstack["Backend & Engenharia Reversa"]
         Astolfo["Astolfo-bot<br><i>Java 17, JDA 5, PostgreSQL, Docker Compose</i>"]
-        NubiLive["Nubi.live<br><i>Marco Histórico 2024, Next.js, GitHub GraphQL ISR</i>"]
+        BlackPC["BLACK PC port (Port Linux)<br><i>Contribuição Open Source: Shims POSIX, DXVK/Vulkan, SDL2</i>"]
     end
 
     Profile --> LowLevel & Desktop & BackendJamstack
@@ -68,9 +68,9 @@ flowchart TD
 - **Proposta:** Bot corporativo modular de alta escalabilidade orientado a eventos.
 - **Engenharia:** Desacoplamento entre listeners de ciclo de vida e despachante dinâmico de comandos (`CommandHandler`), ambiente conteinerizado reprodutível como código e isolamento estrito de segredos de runtime.
 
-### 6. Nubi.live: Portfólio Dinâmico Jamstack (Projeto Marco)
-- **Stack:** JavaScript, Next.js, React, GitHub GraphQL API, ISR (Incremental Static Regeneration), Vercel.
-- **Proposta & Novo Papel:** Primeiro site desenvolvido pelo autor em 2024. No novo portfólio, assume o papel de **marco histórico** ("onde tudo começou"), exibindo a transição evolutiva de desenvolvedor iniciante para engenheiro de sistemas.
+### 6. BLACK PC port (Port Linux): Contribuição Open Source
+- **Stack:** C++, x86 Assembly, Linux (POSIX), SDL2, DXVK / Vulkan, Direct3D 9, CMake.
+- **Proposta & Papel:** Contribuição de código aberto ao projeto `black-pc` (de Spark198rus) implementando o port nativo para Linux com shims POSIX para o kernel do Xbox (`xboxkrnl.exe`), gerenciamento de threads e memória virtual, DXVK sobre Vulkan e SDL2, sem depender de Wine ou Proton.
 
 ---
 

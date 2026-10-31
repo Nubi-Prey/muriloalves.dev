@@ -238,6 +238,13 @@ describe("GitHub GraphQL API & ISR Integration", () => {
       expect(resWrong.status).toBe(401);
       const jsonWrong = await resWrong.json();
       expect(jsonWrong.message).toBe("Invalid revalidation secret");
+
+      // Mesmo tamanho em bytes para exercitar o caminho timingSafeEqual
+      const reqSameLengthWrong = new NextRequest(
+        "http://localhost:3000/api/revalidate?secret=super-secret-key-99"
+      );
+      const resSameLengthWrong = await POST(reqSameLengthWrong);
+      expect(resSameLengthWrong.status).toBe(401);
     });
 
     it("deve revalidar com sucesso quando o segredo for enviado via query param (POST)", async () => {

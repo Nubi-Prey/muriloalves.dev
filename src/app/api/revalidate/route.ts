@@ -1,6 +1,19 @@
+import { timingSafeEqual } from "node:crypto";
 import { NextRequest, NextResponse } from "next/server";
 import { revalidateTag, revalidatePath } from "next/cache";
 import { GITHUB_CACHE_TAG } from "@/lib/github";
+
+function isValidSecret(provided: string | null, expected: string): boolean {
+  if (!provided) {
+    return false;
+  }
+  const providedBuf = Buffer.from(provided, "utf-8");
+  const expectedBuf = Buffer.from(expected, "utf-8");
+  if (providedBuf.length !== expectedBuf.length) {
+    return false;
+  }
+  return timingSafeEqual(providedBuf, expectedBuf);
+}
 
 export async function POST(request: NextRequest) {
   const secret =
@@ -19,7 +32,7 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  if (secret !== expectedSecret) {
+  if (!isValidSecret(secret, expectedSecret)) {
     return NextResponse.json(
       {
         success: false,

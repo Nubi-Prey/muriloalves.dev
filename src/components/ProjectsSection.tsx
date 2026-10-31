@@ -36,7 +36,9 @@ export function ProjectsSection({ initialProjects }: ProjectsSectionProps = {}) 
       <div className="border-y-2 border-[#1c1b1d] dark:border-[#3d4147] py-2.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 bg-[#ffffff] dark:bg-[#191b1e] px-4 shadow-mechanical-sm">
         <div className="flex items-center gap-2.5 text-base sm:text-lg uppercase font-bold text-[#1c1b1d] dark:text-[#ede5d8]">
           <span className="w-3 h-3 bg-[#b83a20] inline-block shrink-0"></span>
-          <span>{t.projects.sectionTitle}</span>
+          <h2 className="text-base sm:text-lg uppercase font-bold text-[#1c1b1d] dark:text-[#ede5d8]">
+            {t.projects.sectionTitle}
+          </h2>
         </div>
         <div className="font-mono text-xs uppercase text-[#584237] dark:text-[#dcc9a9] flex items-center gap-4 font-semibold">
           <span>{catalogCountText}</span>

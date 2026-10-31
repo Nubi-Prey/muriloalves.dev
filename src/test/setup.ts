@@ -10,6 +10,11 @@ vi.mock("next/cache", () => ({
   updateTag: vi.fn(),
 }));
 
+vi.mock("next/font/google", () => ({
+  Space_Grotesk: () => ({ variable: "--font-space-grotesk" }),
+  JetBrains_Mono: () => ({ variable: "--font-jetbrains-mono" }),
+}));
+
 beforeEach(() => {
   window.localStorage.clear();
   document.documentElement.className = "";

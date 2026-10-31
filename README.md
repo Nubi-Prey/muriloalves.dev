@@ -6,7 +6,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38bdf8?logo=tailwindcss)](https://tailwindcss.com/)
 [![pnpm](https://img.shields.io/badge/pnpm-12.15-orange?logo=pnpm)](https://pnpm.io/)
-[![Vitest](https://img.shields.io/badge/Vitest-36_tests_passing-success?logo=vitest)](https://vitest.dev/)
+[![Vitest](https://img.shields.io/badge/Vitest-41_tests_passing-success?logo=vitest)](https://vitest.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Portfólio de engenharia de software e sistemas de **Murilo Alves**, construído com estética **Cyber-Industrial Terminal Documental**, arquitetura orientada a dados auditados do GitHub via **GraphQL com Cache Components (Next.js 16)**, internacionalização nativa instantânea (**pt_BR** / **en_US**), suporte a tema duplo rígido (**Dark / Light**) e suíte completa de testes automatizados.
@@ -118,7 +118,7 @@ Acesse `http://localhost:3000`.
 
 ## 🧪 Qualidade de Código & Testes
 
-O projeto conta com **36 testes automatizados** distribuídos em 6 suítes cobrindo integridade i18n, alternância de tema, responsividade mobile, renderização de componentes e resiliência de cache GraphQL:
+O projeto conta com **41 testes automatizados** distribuídos em 6 suítes cobrindo integridade i18n, alternância de tema, responsividade mobile, semântica e SEO, renderização de componentes e resiliência de cache GraphQL:
 
 ```bash
 # Executar todos os testes com Vitest

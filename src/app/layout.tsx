@@ -21,9 +21,29 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://muriloalves.dev"),
   title: "Murilo Alves // Software & Systems Engineer",
   description:
-    "Engineering portfolio: baremetal operating systems, low-level computer graphics, and local-first commercial desktop architecture.",
+    "Engineering portfolio: baremetal operating systems, resilient backend architecture, databases, and local-first commercial desktop tools.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Murilo Alves // Software & Systems Engineer",
+    description:
+      "Engineering portfolio: baremetal operating systems, resilient backend architecture, databases, and local-first commercial desktop tools.",
+    url: "https://muriloalves.dev",
+    siteName: "muriloalves.dev",
+    locale: "pt_BR",
+    alternateLocale: ["en_US"],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Murilo Alves // Software & Systems Engineer",
+    description:
+      "Engineering portfolio: baremetal operating systems, resilient backend architecture, databases, and local-first commercial desktop tools.",
+  },
   icons: {
     icon: "/favicon.ico",
   },

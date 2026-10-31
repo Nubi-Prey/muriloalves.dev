@@ -46,9 +46,9 @@ export function ProjectCard({ project, viewGithubText }: ProjectCardProps) {
         </div>
 
         {/* Title */}
-        <h2 className="text-xl sm:text-2xl font-bold uppercase text-[#1c1b1d] dark:text-[#ede5d8] group-hover:text-[#b83a20] dark:group-hover:text-[#ffb4a4] transition-none">
+        <h3 className="text-xl sm:text-2xl font-bold uppercase text-[#1c1b1d] dark:text-[#ede5d8] group-hover:text-[#b83a20] dark:group-hover:text-[#ffb4a4] transition-none">
           {project.title}
-        </h2>
+        </h3>
 
         {/* Description */}
         <p className="font-mono text-xs sm:text-sm text-[#584237] dark:text-[#c5bba8] leading-relaxed">

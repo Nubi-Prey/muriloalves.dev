@@ -14,9 +14,9 @@ export function ContactSection() {
           <div className="font-mono text-xs text-[#b83a20] dark:text-[#ffb4a4] font-bold uppercase tracking-wider">
             {t.contact.tagline}
           </div>
-          <h3 className="text-xl sm:text-2xl font-bold uppercase text-[#1c1b1d] dark:text-[#ede5d8]">
+          <h2 className="text-xl sm:text-2xl font-bold uppercase text-[#1c1b1d] dark:text-[#ede5d8]">
             {t.contact.title}
-          </h3>
+          </h2>
           <p className="font-mono text-xs sm:text-sm text-[#584237] dark:text-[#c5bba8]">
             {t.contact.description}
           </p>

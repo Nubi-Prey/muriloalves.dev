@@ -4,6 +4,9 @@ import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Providers } from "@/components/Providers";
 import Home from "@/app/page";
+import { metadata, viewport } from "@/app/layout";
+import robots from "@/app/robots";
+import sitemap from "@/app/sitemap";
 import { ptDictionary } from "@/i18n/dictionaries/pt";
 import { enDictionary } from "@/i18n/dictionaries/en";
 
@@ -74,7 +77,7 @@ describe("Integração Completa da Homepage (Componentes, Links, Classes Hover e
 
       expect(within(card).getByText(project.casing)).toBeInTheDocument();
       expect(
-        within(card).getByRole("heading", { level: 2, name: project.title })
+        within(card).getByRole("heading", { level: 3, name: project.title })
       ).toBeInTheDocument();
 
       const repoLink = within(card).getByRole("link", {
@@ -97,10 +100,17 @@ describe("Integração Completa da Homepage (Componentes, Links, Classes Hover e
     const competenciesSection = container.querySelector("section#competencias");
     expect(competenciesSection).not.toBeNull();
 
+    expect(
+      within(competenciesSection as HTMLElement).getByRole("heading", {
+        level: 2,
+        name: ptDictionary.competencies.title,
+      })
+    ).toBeInTheDocument();
+
     for (const card of ptDictionary.competencies.cards) {
       const heading = within(competenciesSection as HTMLElement).getByRole(
         "heading",
-        { level: 4, name: card.title }
+        { level: 3, name: card.title }
       );
       expect(heading).toBeInTheDocument();
       expect(
@@ -122,6 +132,13 @@ describe("Integração Completa da Homepage (Componentes, Links, Classes Hover e
 
     const contactSection = container.querySelector("section#contato") as HTMLElement;
     expect(contactSection).not.toBeNull();
+
+    expect(
+      within(contactSection).getByRole("heading", {
+        level: 2,
+        name: ptDictionary.contact.title,
+      })
+    ).toBeInTheDocument();
 
     const emailLink = within(contactSection).getByRole("link", {
       name: /muriloalvesnp@gmail\.com/i,
@@ -180,5 +197,22 @@ describe("Integração Completa da Homepage (Componentes, Links, Classes Hover e
     expect(screen.getByText(ptDictionary.hero.role)).toBeInTheDocument();
     expect(screen.getByText(ptDictionary.projects.sectionTitle)).toBeInTheDocument();
     expect(screen.getByText(ptDictionary.footer.rights)).toBeInTheDocument();
+  });
+
+  it("deve exportar metadados de SEO completos, OpenGraph, robots.txt e sitemap.xml alinhados ao domínio muriloalves.dev", () => {
+    expect(metadata.metadataBase?.toString()).toBe("https://muriloalves.dev/");
+    expect(metadata.description).toContain("backend architecture");
+    expect(metadata.description).toContain("databases");
+    expect(metadata.description).not.toContain("low-level computer graphics");
+    expect(metadata.openGraph).toBeDefined();
+    expect(metadata.twitter).toBeDefined();
+    expect(viewport.width).toBe("device-width");
+
+    const robotsConfig = robots();
+    expect(robotsConfig.sitemap).toBe("https://muriloalves.dev/sitemap.xml");
+
+    const sitemapEntries = sitemap();
+    expect(sitemapEntries).toHaveLength(1);
+    expect(sitemapEntries[0].url).toBe("https://muriloalves.dev");
   });
 });
