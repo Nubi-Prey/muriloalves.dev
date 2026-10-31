@@ -8,13 +8,20 @@ export function ContactSection() {
   const { t } = useLanguage();
 
   return (
-    <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 scroll-mt-16" id="contato">
+    <section
+      className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 scroll-mt-16"
+      id="contato"
+      aria-labelledby="contact-heading"
+    >
       <div className="border-2 border-[#1c1b1d] dark:border-[#3d4147] bg-[#ffffff] dark:bg-[#191b1e] shadow-mechanical p-4 sm:p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div className="space-y-1.5 max-w-xl">
           <div className="font-mono text-xs text-[#b83a20] dark:text-[#ffb4a4] font-bold uppercase tracking-wider">
             {t.contact.tagline}
           </div>
-          <h2 className="text-xl sm:text-2xl font-bold uppercase text-[#1c1b1d] dark:text-[#ede5d8]">
+          <h2
+            id="contact-heading"
+            className="text-xl sm:text-2xl font-bold uppercase text-[#1c1b1d] dark:text-[#ede5d8]"
+          >
             {t.contact.title}
           </h2>
           <p className="font-mono text-xs sm:text-sm text-[#584237] dark:text-[#c5bba8]">
@@ -27,7 +34,7 @@ export function ContactSection() {
             href="mailto:muriloalvesnp@gmail.com"
             className="px-4 py-2.5 min-h-[44px] bg-[#b83a20] text-[#ffffff] dark:text-[#ede5d8] border border-[#1c1b1d] dark:border-[#3d4147] font-mono text-xs uppercase font-bold shadow-mechanical-sm hover-shadow-orange-sm hover:bg-[#d04326] transition-none inline-flex items-center justify-center gap-2 w-full sm:w-auto"
           >
-            <Mail className="w-4 h-4 shrink-0" />
+            <Mail aria-hidden="true" className="w-4 h-4 shrink-0" />
             <span className="truncate">{t.contact.emailBtn}</span>
           </a>
 
@@ -37,7 +44,7 @@ export function ContactSection() {
             rel="noopener noreferrer"
             className="px-4 py-2.5 min-h-[44px] bg-[#eae7ea] dark:bg-[#202327] border border-[#1c1b1d] dark:border-[#3d4147] font-mono text-xs uppercase font-bold text-[#1c1b1d] dark:text-[#dcc9a9] hover:bg-[#f5f5f4] dark:hover:bg-[#282b30] shadow-mechanical-sm hover-shadow-orange-sm transition-none inline-flex items-center justify-center gap-2 w-full sm:w-auto"
           >
-            <Code className="w-4 h-4 shrink-0" />
+            <Code aria-hidden="true" className="w-4 h-4 shrink-0" />
             <span>{t.contact.githubBtn}</span>
           </a>
 
@@ -47,7 +54,7 @@ export function ContactSection() {
             rel="noopener noreferrer"
             className="px-4 py-2.5 min-h-[44px] bg-[#eae7ea] dark:bg-[#202327] border border-[#1c1b1d] dark:border-[#3d4147] font-mono text-xs uppercase font-bold text-[#1c1b1d] dark:text-[#dcc9a9] hover:bg-[#f5f5f4] dark:hover:bg-[#282b30] shadow-mechanical-sm hover-shadow-orange-sm transition-none inline-flex items-center justify-center gap-2 w-full sm:w-auto"
           >
-            <LinkIcon className="w-4 h-4 shrink-0" />
+            <LinkIcon aria-hidden="true" className="w-4 h-4 shrink-0" />
             <span>{t.contact.linkedinBtn}</span>
           </a>
         </div>

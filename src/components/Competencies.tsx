@@ -10,25 +10,32 @@ export function Competencies() {
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case "memory":
-        return <Cpu className="w-5 h-5 text-[#b83a20] shrink-0" />;
+        return <Cpu aria-hidden="true" className="w-5 h-5 text-[#b83a20] shrink-0" />;
       case "hardware":
-        return <Terminal className="w-5 h-5 text-[#b83a20] shrink-0" />;
+        return <Terminal aria-hidden="true" className="w-5 h-5 text-[#b83a20] shrink-0" />;
       case "desktop":
-        return <Monitor className="w-5 h-5 text-[#b83a20] shrink-0" />;
+        return <Monitor aria-hidden="true" className="w-5 h-5 text-[#b83a20] shrink-0" />;
       case "dns":
-        return <Server className="w-5 h-5 text-[#b83a20] shrink-0" />;
+        return <Server aria-hidden="true" className="w-5 h-5 text-[#b83a20] shrink-0" />;
       default:
-        return <Cpu className="w-5 h-5 text-[#b83a20] shrink-0" />;
+        return <Cpu aria-hidden="true" className="w-5 h-5 text-[#b83a20] shrink-0" />;
     }
   };
 
   return (
-    <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 scroll-mt-16" id="competencias">
+    <section
+      className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 scroll-mt-16"
+      id="competencias"
+      aria-labelledby="competencies-heading"
+    >
       <div className="border-2 border-[#1c1b1d] dark:border-[#3d4147] bg-[#ffffff] dark:bg-[#191b1e] shadow-mechanical p-4 sm:p-6 md:p-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-center justify-between border-b-2 border-[#1c1b1d] dark:border-[#2e3136] pb-5 gap-3 sm:gap-4">
           <div>
-            <h2 className="text-xl sm:text-2xl font-bold uppercase text-[#1c1b1d] dark:text-[#ede5d8]">
+            <h2
+              id="competencies-heading"
+              className="text-xl sm:text-2xl font-bold uppercase text-[#1c1b1d] dark:text-[#ede5d8]"
+            >
               {t.competencies.title}
             </h2>
             <p className="font-mono text-xs sm:text-sm text-[#584237] dark:text-[#c5bba8] pt-1">
@@ -36,7 +43,10 @@ export function Competencies() {
             </p>
           </div>
           <div className="font-mono text-[11px] sm:text-xs bg-[#eae7ea] dark:bg-[#202327] text-[#1c1b1d] dark:text-[#dcc9a9] px-3.5 py-1.5 border border-[#1c1b1d] dark:border-[#3d4147] font-semibold flex items-center gap-2 shrink-0 self-start md:self-auto">
-            <span className="w-2 h-2 bg-[#4e6851] inline-block shrink-0"></span>
+            <span
+              aria-hidden="true"
+              className="w-2 h-2 bg-[#4e6851] inline-block shrink-0"
+            ></span>
             <span>{t.competencies.status}</span>
           </div>
         </div>

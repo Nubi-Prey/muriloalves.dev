@@ -83,10 +83,11 @@ export function ProjectCard({ project, viewGithubText }: ProjectCardProps) {
           href={project.url}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={`${viewGithubText} — ${project.title}`}
           className="inline-flex items-center gap-1.5 font-mono text-xs font-bold text-[#1c1b1d] dark:text-[#dcc9a9] hover:text-[#b83a20] dark:hover:text-[#ffb4a4] uppercase group-hover:underline min-h-[32px] sm:min-h-0"
         >
           <span>{viewGithubText}</span>
-          <ArrowRight className="w-3.5 h-3.5" />
+          <ArrowRight aria-hidden="true" className="w-3.5 h-3.5" />
         </a>
       </div>
     </article>

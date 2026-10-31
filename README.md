@@ -6,7 +6,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38bdf8?logo=tailwindcss)](https://tailwindcss.com/)
 [![pnpm](https://img.shields.io/badge/pnpm-12.15-orange?logo=pnpm)](https://pnpm.io/)
-[![Vitest](https://img.shields.io/badge/Vitest-49_tests_passing-success?logo=vitest)](https://vitest.dev/)
+[![Vitest](https://img.shields.io/badge/Vitest-50_tests_passing-success?logo=vitest)](https://vitest.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Portfólio de engenharia de software e sistemas de **Murilo Alves** ([muriloalves.dev](https://muriloalves.dev)), construído com estética **Cyber-Industrial Terminal Documental**, arquitetura orientada a dados auditados do GitHub via **GraphQL com Cache Components (Next.js 16)**, superfície completa de **SEO, GEO & AI SEO** (`schema.org` JSON-LD, `/llms.txt`, `/llms-full.txt`, OpenGraph dinâmico), internacionalização nativa instantânea (**pt_BR** / **en_US**), suporte a tema duplo rígido (**Dark / Light**) e suíte completa de testes automatizados.
@@ -131,7 +131,7 @@ Acesse `http://localhost:3000`.
 
 ## 🧪 Qualidade de Código & Testes
 
-O projeto conta com **49 testes automatizados** distribuídos em 7 suítes cobrindo integridade i18n, alternância de tema, responsividade mobile, semântica, SEO/GEO/AI SEO (`JSON-LD`, `/llms.txt`, `/llms-full.txt`, `opengraph-image`, `robots.txt`, `sitemap.xml`), renderização de componentes e resiliência de cache GraphQL:
+O projeto conta com **50 testes automatizados** distribuídos em 7 suítes cobrindo integridade i18n, alternância de tema, responsividade mobile, semântica, Accessibility Tree para Agentes (`agent-accessibility-tree`), SEO/GEO/AI SEO (`JSON-LD`, `/llms.txt`, `/llms-full.txt`, `opengraph-image`, `robots.txt`, `sitemap.xml`), renderização de componentes e resiliência de cache GraphQL:
 
 ```bash
 # Executar todos os testes com Vitest

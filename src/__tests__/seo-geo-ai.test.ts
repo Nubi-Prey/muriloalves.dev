@@ -203,5 +203,39 @@ describe("Fase 4: Alinhamento de Idioma, Metadados e Diretivas para AI Crawlers"
   });
 });
 
+describe("Fase 5: Lighthouse Agentic Browsing (agent-accessibility-tree)", () => {
+  it("deve garantir que todos os links e botões possuam nome acessível mesmo no viewport mobile (< 640px onde '.hidden' é ocultado)", async () => {
+    const page = await Home();
+    const { container } = render(React.createElement(Providers, null, page));
+
+    const interactiveElements = container.querySelectorAll("a[href], button");
+    expect(interactiveElements.length).toBeGreaterThan(0);
+
+    interactiveElements.forEach((el) => {
+      const ariaLabel = el.getAttribute("aria-label")?.trim();
+      const clone = el.cloneNode(true) as HTMLElement;
+      clone.querySelectorAll(".hidden, svg").forEach((node) => node.remove());
+      const visibleMobileText = clone.textContent?.trim();
+
+      expect(
+        Boolean(
+          (ariaLabel && ariaLabel.length > 0) ||
+            (visibleMobileText && visibleMobileText.length > 0)
+        )
+      ).toBe(true);
+    });
+
+    const sections = container.querySelectorAll("main > section");
+    expect(sections).toHaveLength(4);
+    sections.forEach((section) => {
+      const labelledBy = section.getAttribute("aria-labelledby");
+      expect(labelledBy).toBeTruthy();
+      const heading = container.querySelector(`#${labelledBy}`);
+      expect(heading).not.toBeNull();
+    });
+  });
+});
+
+
 
 
