@@ -52,9 +52,12 @@
     padding: 0;
     background-color: var(--bg-base);
     color: var(--text-primary);
-    overflow-x: clip;
     -webkit-tap-highlight-color: transparent;
     scroll-behavior: smooth;
+  }
+
+  button, [role="button"], a {
+    touch-action: manipulation;
   }
 
   body {
@@ -81,7 +84,6 @@
 /* Estado de hover mecânico com sombra mais grossa e alaranjada */
 .hover-shadow-orange {
   transition: transform 0s, box-shadow 0s, border-color 0s;
-  touch-action: manipulation;
 }
 
 .hover-shadow-orange:hover {
@@ -91,21 +93,13 @@
 }
 
 .hover-shadow-orange:active {
-  box-shadow: 4px 4px 0px 0px #b83a20 !important;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px #b83a20 !important;
   border-color: #b83a20 !important;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .hover-shadow-orange:active {
-    transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0px 0px #b83a20 !important;
-    border-color: #b83a20 !important;
-  }
 }
 
 .hover-shadow-orange-sm {
   transition: transform 0s, box-shadow 0s, border-color 0s;
-  touch-action: manipulation;
 }
 
 .hover-shadow-orange-sm:hover {
@@ -115,14 +109,7 @@
 }
 
 .hover-shadow-orange-sm:active {
-  box-shadow: 2px 2px 0px 0px #b83a20 !important;
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px 0px #b83a20 !important;
   border-color: #b83a20 !important;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .hover-shadow-orange-sm:active {
-    transform: translate(-1px, -1px);
-    box-shadow: 3px 3px 0px 0px #b83a20 !important;
-    border-color: #b83a20 !important;
-  }
 }

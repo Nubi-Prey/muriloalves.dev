@@ -145,7 +145,7 @@ describe("Responsividade, Navegação Mobile e Grid Adaptativo", () => {
     expect(projectsLink.className).not.toContain("shadow-[2px_2px_0px_0px_#b83a20]");
   });
 
-  it("deve garantir que todos os botões do Header possuam type='button', touch-manipulation e área de toque móvel", () => {
+  it("deve garantir que todos os botões do Header possuam type='button', cursor-pointer e touch-manipulation", () => {
     render(
       <Providers>
         <Header />
@@ -157,8 +157,8 @@ describe("Responsividade, Navegação Mobile e Grid Adaptativo", () => {
 
     for (const button of buttons) {
       expect(button).toHaveAttribute("type", "button");
+      expect(button.className).toContain("cursor-pointer");
       expect(button.className).toContain("touch-manipulation");
-      expect(button.className).toContain("select-none");
     }
   });
 });

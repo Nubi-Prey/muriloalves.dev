@@ -17,7 +17,7 @@ export default async function Home() {
   return (
     <>
       <Header />
-      <main className="w-full bg-[#f5f5f4] dark:bg-[#121314] text-[#1c1b1d] dark:text-[#ede5d8] min-h-screen">
+      <main className="w-full overflow-x-clip bg-[#f5f5f4] dark:bg-[#121314] text-[#1c1b1d] dark:text-[#ede5d8] min-h-screen">
         <Hero />
         <ProjectsSection initialProjects={projects} />
         <Competencies />

@@ -9,6 +9,32 @@ const emptySubscribe = () => () => {};
 
 export type SectionId = "inicio" | "projetos" | "competencias" | "contato";
 
+function usePressAction(callback: () => void) {
+  const isTouchRef = React.useRef(false);
+
+  const handlePointerUp = (e: React.PointerEvent) => {
+    if (e.pointerType === "touch") {
+      isTouchRef.current = true;
+      callback();
+      setTimeout(() => {
+        isTouchRef.current = false;
+      }, 350);
+    }
+  };
+
+  const handleClick = () => {
+    if (isTouchRef.current) {
+      return;
+    }
+    callback();
+  };
+
+  return {
+    onPointerUp: handlePointerUp,
+    onClick: handleClick,
+  };
+}
+
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<SectionId>("inicio");
@@ -21,6 +47,10 @@ export function Header() {
   const toggleTheme = () => {
     setTheme(isDark ? "light" : "dark");
   };
+
+  const langPress = usePressAction(toggleLanguage);
+  const themePress = usePressAction(toggleTheme);
+  const menuPress = usePressAction(() => setMobileMenuOpen((prev) => !prev));
 
   const handleNavClick = (sectionId: SectionId) => {
     setActiveSection(sectionId);
@@ -80,8 +110,8 @@ export function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#f5f5f4]/95 dark:bg-[#121314]/95 border-b-2 border-[#1c1b1d] dark:border-[#3d4147] backdrop-blur-sm">
-      <div className="h-16 max-w-7xl mx-auto px-4 lg:px-8 flex items-center justify-between gap-2 sm:gap-4 relative z-10">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#f5f5f4] dark:bg-[#121314] border-b-2 border-[#1c1b1d] dark:border-[#3d4147]">
+      <div className="h-16 max-w-7xl mx-auto px-4 lg:px-8 flex items-center justify-between gap-2 sm:gap-4">
         {/* Brand */}
         <div className="flex items-center gap-2 sm:gap-3 min-w-0">
           <a
@@ -123,36 +153,36 @@ export function Header() {
         </nav>
 
         {/* Action Controls */}
-        <div className="flex items-center gap-1.5 sm:gap-3 shrink-0 relative z-20">
+        <div className="flex items-center gap-1.5 sm:gap-3 shrink-0 relative z-20 pointer-events-auto">
           {/* Language Switcher */}
           <button
             type="button"
-            onClick={toggleLanguage}
+            {...langPress}
             title="Mudar Idioma / Change Language"
             aria-label="Mudar Idioma / Change Language"
-            className="inline-flex items-center justify-center gap-1 sm:gap-1.5 h-9 sm:h-7 px-2.5 bg-[#ffffff] dark:bg-[#191b1e] border border-[#1c1b1d] dark:border-[#3d4147] font-mono text-xs sm:text-xs uppercase text-[#1c1b1d] dark:text-[#dcc9a9] shadow-mechanical-sm hover-shadow-orange-sm transition-none font-semibold cursor-pointer touch-manipulation select-none"
+            className="inline-flex items-center justify-center gap-1 sm:gap-1.5 h-9 sm:h-7 px-2.5 bg-[#ffffff] dark:bg-[#191b1e] border border-[#1c1b1d] dark:border-[#3d4147] font-mono text-xs sm:text-xs uppercase text-[#1c1b1d] dark:text-[#dcc9a9] shadow-mechanical-sm hover-shadow-orange-sm transition-none font-semibold cursor-pointer touch-manipulation select-none pointer-events-auto"
           >
-            <Globe className="w-3.5 h-3.5 text-[#b83a20] shrink-0" />
-            <span>{locale === "pt_BR" ? "PT" : "EN"}</span>
+            <Globe className="w-3.5 h-3.5 text-[#b83a20] shrink-0 pointer-events-none" />
+            <span className="pointer-events-none">{locale === "pt_BR" ? "PT" : "EN"}</span>
           </button>
 
           {/* Theme Switcher */}
           <button
             type="button"
-            onClick={toggleTheme}
+            {...themePress}
             title={isDark ? "Ativar Modo Claro" : "Ativar Modo Escuro"}
             aria-label={isDark ? "Ativar Modo Claro" : "Ativar Modo Escuro"}
-            className="inline-flex items-center justify-center gap-1 h-9 sm:h-7 px-2.5 bg-[#ffffff] dark:bg-[#191b1e] border border-[#1c1b1d] dark:border-[#3d4147] font-mono text-xs sm:text-xs uppercase text-[#1c1b1d] dark:text-[#dcc9a9] shadow-mechanical-sm hover-shadow-orange-sm transition-none font-semibold cursor-pointer touch-manipulation select-none"
+            className="inline-flex items-center justify-center gap-1 h-9 sm:h-7 px-2.5 bg-[#ffffff] dark:bg-[#191b1e] border border-[#1c1b1d] dark:border-[#3d4147] font-mono text-xs sm:text-xs uppercase text-[#1c1b1d] dark:text-[#dcc9a9] shadow-mechanical-sm hover-shadow-orange-sm transition-none font-semibold cursor-pointer touch-manipulation select-none pointer-events-auto"
           >
             {isDark ? (
               <>
-                <Sun className="w-3.5 h-3.5 text-[#ffb4a4] shrink-0" />
-                <span className="hidden sm:inline text-[11px]">{t.header.themeLight}</span>
+                <Sun className="w-3.5 h-3.5 text-[#ffb4a4] shrink-0 pointer-events-none" />
+                <span className="hidden sm:inline text-[11px] pointer-events-none">{t.header.themeLight}</span>
               </>
             ) : (
               <>
-                <Moon className="w-3.5 h-3.5 text-[#b83a20] shrink-0" />
-                <span className="hidden sm:inline text-[11px]">{t.header.themeDark}</span>
+                <Moon className="w-3.5 h-3.5 text-[#b83a20] shrink-0 pointer-events-none" />
+                <span className="hidden sm:inline text-[11px] pointer-events-none">{t.header.themeDark}</span>
               </>
             )}
           </button>
@@ -162,7 +192,7 @@ export function Header() {
             href="https://github.com/Nubi-Prey"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-1 h-9 sm:h-7 px-2.5 sm:px-3 bg-[#b83a20] text-[#ede5d8] border border-[#1c1b1d] dark:border-[#3d4147] font-mono text-xs sm:text-xs uppercase font-bold shadow-mechanical-sm hover-shadow-orange-sm hover:bg-[#d04326] transition-none touch-manipulation select-none"
+            className="inline-flex items-center justify-center gap-1 h-9 sm:h-7 px-2.5 sm:px-3 bg-[#b83a20] text-[#ede5d8] border border-[#1c1b1d] dark:border-[#3d4147] font-mono text-xs sm:text-xs uppercase font-bold shadow-mechanical-sm hover-shadow-orange-sm hover:bg-[#d04326] transition-none touch-manipulation pointer-events-auto"
           >
             <span className="hidden sm:inline">{t.header.github}</span>
             <ExternalLink className="w-3 h-3 shrink-0" />
@@ -171,15 +201,15 @@ export function Header() {
           {/* Mobile Menu Toggle Button */}
           <button
             type="button"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            {...menuPress}
             aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
             aria-expanded={mobileMenuOpen}
-            className="md:hidden inline-flex items-center justify-center w-9 h-9 bg-[#ffffff] dark:bg-[#191b1e] border border-[#1c1b1d] dark:border-[#3d4147] font-mono text-xs uppercase text-[#1c1b1d] dark:text-[#dcc9a9] shadow-mechanical-sm hover-shadow-orange-sm transition-none cursor-pointer touch-manipulation select-none"
+            className="md:hidden inline-flex items-center justify-center w-9 h-9 bg-[#ffffff] dark:bg-[#191b1e] border border-[#1c1b1d] dark:border-[#3d4147] font-mono text-xs uppercase text-[#1c1b1d] dark:text-[#dcc9a9] shadow-mechanical-sm hover-shadow-orange-sm transition-none cursor-pointer touch-manipulation select-none pointer-events-auto"
           >
             {mobileMenuOpen ? (
-              <X className="w-4 h-4 text-[#b83a20] shrink-0" />
+              <X className="w-4 h-4 text-[#b83a20] shrink-0 pointer-events-none" />
             ) : (
-              <Menu className="w-4 h-4 text-[#1c1b1d] dark:text-[#dcc9a9] shrink-0" />
+              <Menu className="w-4 h-4 text-[#1c1b1d] dark:text-[#dcc9a9] shrink-0 pointer-events-none" />
             )}
           </button>
         </div>
@@ -190,7 +220,7 @@ export function Header() {
         <nav
           data-testid="mobile-menu"
           aria-label="Navegação mobile"
-          className="md:hidden border-b-2 border-[#1c1b1d] dark:border-[#3d4147] bg-[#ffffff] dark:bg-[#191b1e] shadow-mechanical px-4 py-3 space-y-1.5 relative z-20"
+          className="md:hidden border-b-2 border-[#1c1b1d] dark:border-[#3d4147] bg-[#ffffff] dark:bg-[#191b1e] shadow-mechanical px-4 py-3 space-y-1.5"
         >
           <div className="font-mono text-[10px] text-[#584237] dark:text-[#dcc9a9]/60 uppercase tracking-widest pb-1 border-b border-[#1c1b1d]/10 dark:border-[#3d4147]/50 mb-2">
             {"// NAVEGAÇÃO //"}
@@ -202,7 +232,7 @@ export function Header() {
                 key={item.id}
                 href={item.href}
                 onClick={() => handleNavClick(item.id)}
-                className={`block px-3 py-2 font-mono text-xs font-bold uppercase transition-none touch-manipulation ${
+                className={`block px-3 py-2 font-mono text-xs font-bold uppercase transition-none ${
                   isActive
                     ? "bg-[#1c1b1d] text-[#f5f5f4] dark:bg-[#ede5d8] dark:text-[#121314] shadow-mechanical-sm"
                     : "text-[#1c1b1d] dark:text-[#ede5d8] hover:bg-[#eae7ea] dark:hover:bg-[#202327] border border-[#1c1b1d]/20 dark:border-[#3d4147]"
