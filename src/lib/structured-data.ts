@@ -23,7 +23,7 @@ export function buildPortfolioJsonLd(
         url: SITE_URL,
         name: "muriloalves.dev",
         description:
-          "Portfólio de Engenharia de Software & Sistemas de Murilo Alves: sistemas baremetal, arquitetura backend, bancos de dados e ferramentas desktop local-first.",
+          "Portfólio de Murilo Alves: desenvolvimento de software e sistemas baremetal, arquitetura backend, bancos de dados e ferramentas desktop local-first.",
         inLanguage: ["pt-BR", "en-US"],
         publisher: { "@id": PERSON_ID },
       },
@@ -31,7 +31,7 @@ export function buildPortfolioJsonLd(
         "@type": "ProfilePage",
         "@id": PROFILE_PAGE_ID,
         url: SITE_URL,
-        name: "Murilo Alves // Engenheiro de Software & Sistemas (Software & Systems Engineer)",
+        name: "Murilo Alves // Desenvolvedor de Software & Sistemas (Software & Systems Developer)",
         isPartOf: { "@id": WEBSITE_ID },
         about: { "@id": PERSON_ID },
         mainEntity: { "@id": PERSON_ID },
@@ -43,9 +43,9 @@ export function buildPortfolioJsonLd(
         "@id": PERSON_ID,
         name: "Murilo Alves",
         alternateName: "Nubi-Prey",
-        jobTitle: "Software & Systems Engineer",
+        jobTitle: "Software & Systems Developer",
         description:
-          "Engenheiro de software focado em sistemas de baixo nível, arquitetura de backend, bancos de dados e ferramentas desktop local-first.",
+          "Desenvolvedor de software focado em sistemas de baixo nível, arquitetura de backend, bancos de dados e ferramentas desktop local-first.",
         url: SITE_URL,
         email: "mailto:muriloalvesnp@gmail.com",
         sameAs: [

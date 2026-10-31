@@ -24,18 +24,18 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://muriloalves.dev"),
   title: {
     default:
-      "Murilo Alves // Engenheiro de Software & Sistemas | Software & Systems Engineer",
+      "Murilo Alves // Desenvolvedor de Software & Sistemas | Software & Systems Developer",
     template: "%s | Murilo Alves",
   },
   description:
-    "Portfólio de Engenharia de Software de Murilo Alves: sistemas baremetal, arquitetura de backend resiliente, bancos de dados e aplicações desktop local-first. // Engineering portfolio: baremetal operating systems, resilient backend architecture, databases, and local-first commercial desktop tools.",
+    "Portfólio de Murilo Alves: desenvolvimento de sistemas baremetal, arquitetura de backend resiliente, bancos de dados e ferramentas desktop local-first. // Portfolio: baremetal systems development, resilient backend architecture, databases, and local-first commercial desktop tools.",
   keywords: [
     "Murilo Alves",
     "Nubi-Prey",
-    "Engenheiro de Software",
-    "Engenheiro de Sistemas",
-    "Software Engineer",
-    "Systems Engineer",
+    "Desenvolvedor de Software",
+    "Desenvolvedor de Sistemas",
+    "Software Developer",
+    "Systems Developer",
     "Backend Architecture",
     "Databases",
     "PostgreSQL",
@@ -56,9 +56,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Murilo Alves // Engenheiro de Software & Sistemas",
+    title: "Murilo Alves // Desenvolvedor de Software & Sistemas",
     description:
-      "Portfólio de Engenharia de Software de Murilo Alves: sistemas baremetal, arquitetura de backend resiliente, bancos de dados e aplicações desktop local-first.",
+      "Portfólio de Murilo Alves: desenvolvimento de sistemas baremetal, arquitetura de backend resiliente, bancos de dados e ferramentas desktop local-first.",
     url: "https://muriloalves.dev",
     siteName: "muriloalves.dev",
     locale: "pt_BR",
@@ -67,9 +67,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Murilo Alves // Software & Systems Engineer",
+    title: "Murilo Alves // Software & Systems Developer",
     description:
-      "Engineering portfolio: baremetal operating systems, resilient backend architecture, databases, and local-first commercial desktop tools.",
+      "Portfolio: baremetal systems development, resilient backend architecture, databases, and local-first commercial desktop tools.",
   },
   icons: {
     icon: "/favicon.ico",

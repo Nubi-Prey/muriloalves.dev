@@ -1,4 +1,4 @@
-# muriloalves.dev // Portfólio de Engenharia de Sistemas & Software
+# muriloalves.dev // Portfólio de Desenvolvimento de Software & Sistemas
 
 [![CI](https://github.com/Nubi-Prey/muriloalves.dev/actions/workflows/ci.yml/badge.svg)](https://github.com/Nubi-Prey/muriloalves.dev/actions/workflows/ci.yml)
 [![Next.js](https://img.shields.io/badge/Next.js-16.4.3-black?logo=next.js)](https://nextjs.org/)
@@ -9,7 +9,7 @@
 [![Vitest](https://img.shields.io/badge/Vitest-50_tests_passing-success?logo=vitest)](https://vitest.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Portfólio de engenharia de software e sistemas de **Murilo Alves** ([muriloalves.dev](https://muriloalves.dev)), construído com estética **Cyber-Industrial Terminal Documental**, arquitetura orientada a dados auditados do GitHub via **GraphQL com Cache Components (Next.js 16)**, superfície completa de **SEO, GEO & AI SEO** (`schema.org` JSON-LD, `/llms.txt`, `/llms-full.txt`, OpenGraph dinâmico), internacionalização nativa instantânea (**pt_BR** / **en_US**), suporte a tema duplo rígido (**Dark / Light**) e suíte completa de testes automatizados.
+Portfólio de desenvolvimento de software e sistemas de **Murilo Alves** ([muriloalves.dev](https://muriloalves.dev)), construído com estética **Cyber-Industrial Terminal Documental**, arquitetura orientada a dados auditados do GitHub via **GraphQL com Cache Components (Next.js 16)**, superfície completa de **SEO, GEO & AI SEO** (`schema.org` JSON-LD, `/llms.txt`, `/llms-full.txt`, OpenGraph dinâmico), internacionalização nativa instantânea (**pt_BR** / **en_US**), suporte a tema duplo rígido (**Dark / Light**) e suíte completa de testes automatizados.
 
 ---
 

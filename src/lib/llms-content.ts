@@ -7,7 +7,7 @@ export function generateLlmsTxt(
   projects: readonly PortfolioProjectSchemaV2[]
 ): string {
   const lines: string[] = [
-    "# Murilo Alves // Software & Systems Engineer",
+    "# Murilo Alves // Software & Systems Developer",
     "",
     `> ${enDictionary.hero.bio}`,
     `> [PT-BR] ${ptDictionary.hero.bio}`,
@@ -56,7 +56,7 @@ export function generateLlmsFullTxt(
   projects: readonly PortfolioProjectSchemaV2[]
 ): string {
   const lines: string[] = [
-    "# Murilo Alves // Software & Systems Engineer — Full Technical Dossier (PT-BR & EN-US)",
+    "# Murilo Alves // Software & Systems Developer — Full Technical Dossier (PT-BR & EN-US)",
     "",
     `> Canonical URL: ${SITE_URL}`,
     `> Summary Index: ${SITE_URL}/llms.txt`,

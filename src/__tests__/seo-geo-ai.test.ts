@@ -108,7 +108,7 @@ describe("Fase 2: AI SEO & GEO — Endpoints /llms.txt e /llms-full.txt", () => 
     expect(response.headers.get("Content-Type")).toContain("text/plain");
 
     const text = await response.text();
-    expect(text).toContain("# Murilo Alves // Software & Systems Engineer");
+    expect(text).toContain("# Murilo Alves // Software & Systems Developer");
     expect(text).toContain(`${SITE_URL}/llms-full.txt`);
 
     const schemas = getAllProjectSchemas();

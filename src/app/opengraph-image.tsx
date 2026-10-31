@@ -3,7 +3,7 @@ import { ptDictionary } from "@/i18n/dictionaries/pt";
 import { enDictionary } from "@/i18n/dictionaries/en";
 
 export const alt =
-  "Murilo Alves // Engenheiro de Software & Sistemas | Software & Systems Engineer";
+  "Murilo Alves // Desenvolvedor de Software & Sistemas | Software & Systems Developer";
 
 export const size = {
   width: 1200,

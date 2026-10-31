@@ -60,14 +60,14 @@ describe("LanguageProvider & useLanguage (Sincronização de Estado e Storage)",
 
     expect(screen.getByTestId("active-locale")).toHaveTextContent("pt_BR");
     expect(screen.getByTestId("hero-role")).toHaveTextContent(
-      "Engenheiro de Software & Sistemas"
+      "Desenvolvedor de Software & Sistemas"
     );
 
     // 1º clique: pt_BR -> en_US
     await user.click(screen.getByTestId("btn-toggle"));
     expect(screen.getByTestId("active-locale")).toHaveTextContent("en_US");
     expect(screen.getByTestId("hero-role")).toHaveTextContent(
-      "Software & Systems Engineer"
+      "Software & Systems Developer"
     );
     expect(window.localStorage.getItem(LOCALE_STORAGE_KEY)).toBe("en_US");
 
@@ -75,7 +75,7 @@ describe("LanguageProvider & useLanguage (Sincronização de Estado e Storage)",
     await user.click(screen.getByTestId("btn-toggle"));
     expect(screen.getByTestId("active-locale")).toHaveTextContent("pt_BR");
     expect(screen.getByTestId("hero-role")).toHaveTextContent(
-      "Engenheiro de Software & Sistemas"
+      "Desenvolvedor de Software & Sistemas"
     );
     expect(window.localStorage.getItem(LOCALE_STORAGE_KEY)).toBe("pt_BR");
 
@@ -118,7 +118,7 @@ describe("LanguageProvider & useLanguage (Sincronização de Estado e Storage)",
 
     expect(screen.getByTestId("active-locale")).toHaveTextContent("pt_BR");
     expect(screen.getByTestId("hero-role")).toHaveTextContent(
-      "Engenheiro de Software & Sistemas"
+      "Desenvolvedor de Software & Sistemas"
     );
 
     await user.click(screen.getByTestId("btn-toggle"));
@@ -147,7 +147,7 @@ describe("LanguageProvider & useLanguage (Sincronização de Estado e Storage)",
 
     expect(screen.getByTestId("active-locale")).toHaveTextContent("en_US");
     expect(screen.getByTestId("hero-role")).toHaveTextContent(
-      "Software & Systems Engineer"
+      "Software & Systems Developer"
     );
   });
 });

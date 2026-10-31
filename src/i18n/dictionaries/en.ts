@@ -16,8 +16,8 @@ export const enDictionary: Dictionary = {
   hero: {
     statusBadge: "ENGINEERING PORTFOLIO // SYSTEMS & BACKEND",
     name: "MURILO ALVES",
-    role: "Software & Systems Engineer",
-    bio: "Software engineer working on low-level systems, resilient backends, databases, and offline-first desktop tools built for continuous commercial operations without cloud dependencies.",
+    role: "Software & Systems Developer",
+    bio: "Software developer working on low-level systems, resilient backends, databases, and offline-first desktop tools built for continuous commercial operations without cloud dependencies.",
     tags: [
       "Systems & Low-Level",
       "Backend & Databases",
