@@ -19,6 +19,9 @@
     "test": "vitest run",
     "test:watch": "vitest"
   },
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "dependencies": {
     "lucide-react": "^1.63.0",
     "next": "16.4.3",
